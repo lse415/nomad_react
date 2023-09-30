@@ -34,7 +34,7 @@ function Home(){
                 year={movie.year}
                 coverImg={movie.medium_cover_image}
                 title={movie.title}
-                summary={movie.ummary}
+                summary={movie.summary}
                 genres={movie.genres}
             />
         ))}
