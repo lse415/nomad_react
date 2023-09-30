@@ -26,19 +26,24 @@ function Home(){
             <span>Loading...</span>
         </div>
         ) : (
+        <>
+        <div className={styles.header}>
+        
+            <h1>Nomad Movie</h1>
+        </div>
         <div className={styles.movies}>
             {movies.map(movie => (
             <Movie 
                 key={movie.id}
                 id={movie.id}
-                year={movie.year}
                 coverImg={movie.medium_cover_image}
-                title={movie.title}
-                summary={movie.summary}
-                genres={movie.genres}
+                title={movie.title.length > 15 ? 
+                    `${movie.title.slice(0, 15)}...` : 
+                    movie.title}
             />
         ))}
         </div>
+        </>
         )}
     </div>
     );

@@ -1,0 +1,15 @@
+
+.detail_card {
+    display: flex;
+    background-color: rgba(216, 216, 216, 0.68);
+    text-align: center;
+    justify-content: center;
+    margin: 100px;
+    padding: 30px 0 30px 0;
+}
+
+.detail {
+    text-align: left;
+    margin-top: 100px;
+    padding: 30px;
+}
