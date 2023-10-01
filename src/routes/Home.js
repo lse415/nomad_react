@@ -2,6 +2,8 @@
 import {useState, useEffect} from "react";
 import Movie from "../components/Movie";
 import styles from "./Home.module.css";
+import {Link} from "react-router-dom";
+
 
 function Home(){
     const [loading, setLoading] = useState(true);
@@ -28,9 +30,11 @@ function Home(){
         ) : (
         <>
         <div className={styles.header}>
-        
-            <h1>Nomad Movie</h1>
+            <Link to="/" className={styles.link}>
+                <h1>Nomad Movie</h1>
+            </Link>
         </div>
+
         <div className={styles.movies}>
             {movies.map(movie => (
             <Movie 
@@ -40,6 +44,8 @@ function Home(){
                 title={movie.title.length > 15 ? 
                     `${movie.title.slice(0, 15)}...` : 
                     movie.title}
+                bgImg={movie.background_image}
+
             />
         ))}
         </div>
