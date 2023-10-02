@@ -7,9 +7,10 @@ import SearchBar from "../components/SearchBar";
 function Home() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [showAllMovies, setShowAllMovies] = useState(true);
+  const [searchTerm, setSearchTerm] = useState(''); // Store the user's search term
+  const [searchResults, setSearchResults] = useState([]); // Store filtered search results
+  const [showAllMovies, setShowAllMovies] = useState(true); // Control whether to show all movies or search results
+
 
   const getMovies = async () => {
     const json = await (
@@ -27,6 +28,7 @@ function Home() {
   }, []);
 
   const handleSearch = (searchTerm) => {
+    // Filter movies based on the user's search term
     const filteredMovies = movies.filter((movie) =>
       movie.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -38,7 +40,7 @@ function Home() {
     setSearchResults([]);
     setShowAllMovies(true);
     setSearchTerm('');
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -89,7 +91,6 @@ function Home() {
                       ? `${movie.title.slice(0, 15)}...`
                       : movie.title
                   }
-                  bgImg={movie.background_image}
                 />
               ))}
             </div>

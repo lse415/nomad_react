@@ -30,7 +30,7 @@ function Detail() {
         ) : (
         <>
         <div className={styles.header}>
-            <Link to="/home" className={styles.link}>
+            <Link to="/" className={styles.link}>
                 <h1>Nomad Movie</h1>
             </Link>
         </div>
